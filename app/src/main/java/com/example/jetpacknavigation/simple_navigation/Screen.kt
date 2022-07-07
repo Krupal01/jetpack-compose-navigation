@@ -41,7 +41,19 @@ fun Screen1(
                 navController.navigate(NavigationRoutes.Screen3.setArg(sender = text))
             }
         }) {
-            Text(text = "Go to Screen 2 with require arg")
+            Text(text = "Go to Screen 3 with optional arg")
+        }
+
+        Button(onClick = {
+            navController.navigate(NavigationRoutes.Screen4.routes)
+        }) {
+            Text(text = "Go to Screen 4")
+        }
+
+        Button(onClick = {
+            navController.navigate(NavigationRoutes.Screen5.routes)
+        }) {
+            Text(text = "Go to Screen 5")
         }
 
 
@@ -67,5 +79,23 @@ fun Screen3(
 ) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(text = "hello sender $sender")
+    }
+}
+
+@Composable
+fun Screen4(
+    navController: NavController
+) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text(text = "Screen 4")
+    }
+}
+
+@Composable
+fun Screen5(
+    navController: NavController
+) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text(text = "Screen 5")
     }
 }

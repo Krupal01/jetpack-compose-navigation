@@ -29,4 +29,9 @@ sealed class NavigationRoutes(val routes : String){
 //        routes = "Screen3?$SENDER_KEY={$SENDER_KEY}&$SENDER_KEY={$SENDER_KEY}&$SENDER_KEY={$SENDER_KEY}"
     }
 
+    object Screen4 : NavigationRoutes(routes = "Screen4")
+    object Screen5 : NavigationRoutes(routes = "Screen5")
+
+    object ChildNavGraph : NavigationRoutes(routes = "ChildNavGraph")
+
 }

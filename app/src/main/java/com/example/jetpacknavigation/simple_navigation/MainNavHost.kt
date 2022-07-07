@@ -6,6 +6,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import androidx.navigation.navigation
 
 const val MSG_KEY = "MSG"
 const val SENDER_KEY = "SENDER"
@@ -17,7 +18,7 @@ fun MainNavHost(
 
     NavHost(
         navController = navHostController,
-        startDestination = NavigationRoutes.Screen1.routes
+        startDestination = NavigationRoutes.Screen1.routes,
     ) {
         composable(
             route = NavigationRoutes.Screen1.routes
@@ -51,6 +52,10 @@ fun MainNavHost(
         ){
             Screen3(navController = navHostController, sender = it.arguments?.getString(SENDER_KEY).toString() )
         }
+
+        ChildNavGraph(
+            navController = navHostController
+        )
     }
 
 }
